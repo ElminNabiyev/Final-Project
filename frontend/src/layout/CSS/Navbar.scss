@@ -1,0 +1,226 @@
+header {
+    padding: 10px;
+    background-color: var(--background-color);
+}
+
+.nav-all {
+    display: flex;
+    justify-content: space-between;
+}
+
+.play,
+.create {
+    a {
+        li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.logo {
+    background-color: var(--secondary-color);
+    height: 1.25rem;
+    width: 1.25rem;
+    mask-position: center center;
+}
+
+h2 {
+    padding-bottom: 10px;
+    color: #E6E6EA;
+    font-size: 20px;
+    padding: 9px 18px;
+}
+
+.epic-logo {
+    cursor: pointer;
+
+    .dropdown2 {
+        border-radius: 15px;
+        padding: 40px;
+        width: 40%;
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-content: space-between;
+        position: absolute;
+        top: 12%;
+        left: 1%;
+        background-color: #202024;
+        z-index: 2;
+    }
+
+    span {
+        color: #E6E6EA;
+    }
+
+    &:hover .symbol {
+        color: var(--secondary-color);
+        transform: translateY(3px);
+    }
+}
+
+.line {
+    width: 1px;
+    height: 35px;
+    background-color: rgb(43, 43, 43);
+    margin-left: 30px;
+}
+
+.nav-div {
+    ul {
+        gap: 10px;
+
+        li {
+            color: var(--primary-color);
+            font-size: 14px;
+            padding: 9px 18px;
+            transition: 200ms;
+            border-radius: 7px;
+
+            &:hover {
+                background-color: rgba(156, 156, 156, 0.473);
+                color: var(--secondary-color);
+            }
+        }
+    }
+}
+
+.lists {
+    display: flex;
+    padding-left: 40px;
+}
+
+.dropdown {
+    position: absolute;
+    top: 12%;
+    right: 5%;
+    background-color: var(--background-color);
+    padding: 20px 8px;
+    border-radius: 7px;
+
+    li {
+        color: var(--primary-color);
+        font-size: 14px;
+        padding: 7px 18px;
+        transition: 200ms;
+        border-radius: 7px;
+        font-weight: 400;
+
+        &:hover {
+            background-color: rgba(156, 156, 156, 0.473);
+            color: var(--secondary-color);
+        }
+    }
+}
+
+.profile-download {
+    gap: 20px;
+    font-size: 20px;
+    padding-right: 20px;
+
+    i {
+        color: #a4a4a4;
+        cursor: pointer;
+        transition: 200ms;
+
+        &:hover {
+            color: #E6E6EA;
+        }
+    }
+}
+
+.fa-globe:active {
+    color: #E6E6EA;
+}
+
+.fa-globe:hover .langs {
+    display: inline;
+}
+.menu{
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+.fa-user {
+    font-size: 16px;
+    background-color: rgb(67, 67, 67);
+    padding: 10px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.download {
+    color: black;
+    background-color: #26BBFF;
+    border: none;
+    font-size: 14px;
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 200ms;
+
+    &:hover {
+        background-color: #40d6ff;
+    }
+}
+
+.symbol {
+    color: var(--primary-color);
+    transition: 200ms;
+    position: relative;
+}
+.fa-bars, .fa-x{
+    align-self: center;
+    color: var(--secondary-color);
+    font-size: 30px;
+}
+@media only screen and (max-width: 1200px) {
+    .profile-download , .epic-logo{
+        display: none !important;
+    }
+    .download{
+        margin:10px 35% 0px;
+        width: 30%;
+    }
+    .lists{
+        ul{
+            li{
+                display: none;
+            }
+        }
+    }
+    .menu{
+        display: inline;
+    }
+    .menu-profile{
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        gap: 10px;
+        i{
+            color: var(--primary-color);
+        }
+        .dropdown{
+            top: 15%;
+        }
+    }
+    .support{
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+        }
+            li {
+                font-size: 14px;
+                padding:15px 20px;
+                transition: 200ms;
+                border-radius: 7px;
+                background-color: rgba(54, 54, 54, 0.473);
+                color: var(--secondary-color);
+            }
+    }
+}

@@ -1,0 +1,67 @@
+main {
+    width: 75%;
+    margin: auto;
+}
+.active{
+    color: var(--secondary-color) !important;
+}
+.search-lists {
+    gap: 30px;
+    li{
+        font-size: 14px;
+        a{
+            color: var(--primary-color);
+            transition: 200ms;
+            &:hover{
+                color: var(--secondary-color);
+            }
+        }
+    }
+}
+.hero{
+    padding: 30px 0px;
+    justify-content: space-between;
+}
+.hero_div {
+    gap: 20px;
+}
+
+
+.search-div {
+    svg {
+        position: absolute;
+        top: 25%;
+        left: 6%;
+    }
+    position: relative;
+
+    input {
+        padding: 12px 3rem;
+        border-radius: 20px;
+        background-color: #202020;
+        border: none;
+        color: white;
+        &:focus {
+            outline: none;
+            background-color: #2c2c2c;
+        }
+    }
+    label{
+        position: absolute;
+        top: -25%;
+        left:15%;
+        color: rgb(152, 151, 151);
+        font-weight: 500;
+        font-size: 14px;
+    }
+}
+@media only screen and (max-width: 1200px) {
+.search-lists{
+        display: none !important;
+}
+}
+@media only screen and (max-width: 800px) {
+.search-lists{
+        display: none !important;
+}
+}
