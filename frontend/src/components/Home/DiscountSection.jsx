@@ -47,11 +47,9 @@ function DiscountSection() {
                     className="mySwiper"
                 >
                     {datas.filter(x => x.discount === true).map(x =>
-                        <>
-                            <SwiperSlide>
-                                <Card2 img={x.img} name={x.name} discount={x.discount} price={x.price} discountPrice={x.discountedPrice}discountPercent={x.discountPercent}></Card2>
-                            </SwiperSlide>
-                        </>
+                        <SwiperSlide>
+                                <Card2 id={x._id} img={x.img} name={x.name} discount={x.discount} price={x.price} discountPercent={x.discountPercent}></Card2>
+                        </SwiperSlide>
                     )}
                 </Swiper>
                 <div className='writes'>
@@ -76,7 +74,7 @@ function DiscountSection() {
                     {datas.filter(x => x.topSellers === true).map(x =>
                         <>
                             <SwiperSlide>
-                                <Card2 img={x.img} name={x.name} discount={x.discount} price={x.price} discountPrice={x.discountedPrice}discountPercent={x.discountPercent}></Card2>
+                                <Card2 id={x._id} img={x.img} name={x.name} discount={x.discount} price={x.price} discountPrice={x.discountedPrice}discountPercent={x.discountPercent}></Card2>
                             </SwiperSlide>
                         </>
                     )}

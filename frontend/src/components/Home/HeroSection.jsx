@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { FormattedMessage, IntlProvider } from 'react-intl';
 import { Link, NavLink } from 'react-router-dom';
 import { LangContext } from '../../context/LangProvider';
+import { BasketContext } from '../../context/BasketProvider';
+import { WishlistContext } from '../../context/WishlistProvider';
 
 const flex = {
     display: "flex",
@@ -10,6 +12,8 @@ const flex = {
 
 function HeroSection() {
     const { messages, locale } = useContext(LangContext)
+    const { basket, addBasket, removeBasket, decreaseBasket } = useContext(BasketContext)
+    const  { wishlist, addWishlist ,isExsist}  = useContext(WishlistContext)
 
     return (
         <IntlProvider locale={locale} messages={messages[locale]}>
@@ -31,10 +35,10 @@ function HeroSection() {
                 <div className="wislist">
                     <ul style={flex} className='search-lists'>
                         <li>
-                            <Link><FormattedMessage id='wishlist'></FormattedMessage></Link>
+                            <Link to={"/wishlist"}><FormattedMessage id='wishlist'></FormattedMessage><span>({wishlist.length})</span></Link>
                         </li>
                         <li>
-                            <Link><FormattedMessage id='cart'></FormattedMessage></Link>
+                            <Link to={"/basket"}><FormattedMessage id='cart'></FormattedMessage><span>({basket.length})</span></Link>
                         </li>
                     </ul>
                 </div>

@@ -30,7 +30,7 @@ function SliderSection() {
             >
                 {datas.map(x =>
                     <>
-                        <SwiperSlide><Card img={x.img} name={x.name} heading={x.heading}></Card></SwiperSlide>
+                        <SwiperSlide><Card id={x._id} img={x.img} name={x.name} heading={x.heading}></Card></SwiperSlide>
                     </>
                 )}
             </Swiper>
