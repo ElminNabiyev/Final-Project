@@ -4,8 +4,9 @@ import useLocalStorage from '../hooks/useLocalStorage'
 export const BasketContext = createContext()
 
 function BasketProvider({ children }) {
-  const [basket, setBasket] = useLocalStorage("basket",[])
-
+  const [basket, setBasket] = useLocalStorage("basket", [])
+  const price = basket.price !== undefined ? basket.price.slice(1) : null
+  const discount = basket.price !== undefined ? basket.discountPercent.slice(1, 3) : null
   function addBasket(item) {
     const index = basket.findIndex(x => x._id === item._id)
     const element = basket[index]
@@ -21,7 +22,6 @@ function BasketProvider({ children }) {
   function removeBasket(item) {
     setBasket(basket.filter(x => x._id !== item._id))
   }
-
   function decreaseBasket(item) {
     const index = basket.findIndex(x => x._id === item._id)
     const element = basket[index]
@@ -31,7 +31,7 @@ function BasketProvider({ children }) {
     }
   }
   return (
-    <BasketContext.Provider value={{ basket, addBasket, removeBasket, decreaseBasket }}>{children}</BasketContext.Provider>
+    <BasketContext.Provider value={{ basket, addBasket, removeBasket, decreaseBasket}}>{children}</BasketContext.Provider>
   )
 }
 

@@ -43,7 +43,7 @@ function DealsOfWeek() {
                 <div className="general-div">
                     {datas.filter(x => x.dealsOfWeek === true).map(x =>
                         <div className="week-card">
-                            <div className='gamePhoto'>
+                            <div className='gamePhoto'> 
                                 <img style={{ width: "100%", height: "200px" }} src={x.img} alt="Game Photo" />
                                 <div className="overlay"><span onClick={()=>addWishlist(x)}>{isExsist(x)?<i className="fa-solid fa-heart"></i>:<i className="fa-regular fa-heart"></i>}</span></div>
                                 <p><FormattedMessage id='deals'></FormattedMessage></p>
